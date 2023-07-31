@@ -1,0 +1,58 @@
+<div class="box">
+  <div>
+<div class="row" *ngIf="!loading" >
+    <div class="col-md-5 col-sm-12">
+      <img class="imga" src="{{detail?.imageUrl}}" alt="sas">
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <div class="info">
+        <ul class="list-unstyled" style="margin-top: 70px;margin-left: 20px;">
+          <li><strong>Title :</strong>{{detail?.name}}</li>
+          <li><strong>Category :</strong>{{detail?.categoryName}}</li>
+          <li><strong>Description :</strong>{{detail?.description}}</li>
+
+          <li><strong>Price :</strong>{{detail?.price}}</li>
+          <button class="btn btn mb-3"
+            style="background-color: #3a9c0c;color: #ffffff;width: 30%;margin-top: 40px;height: 30px;"
+            (click)="addToCart($event)">Add To Cart</button>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <br><br>
+
+  <body>
+
+    <section class="product">
+      <h2 class="product-category">best selling</h2>
+
+      <div class="product-container">
+
+        <div #productCard class="product-card" *ngFor="let a of cartproducts">
+          <button class="pre-btn" #preBtn><img src="assets/images/arrow.png" alt=""></button>
+          <button class="nxt-btn" #nxtBtn><img src="assets/images/arrow.png" alt=""></button>
+          <div class="product-image">
+            <img (click)="goToItem(a.id)" src="{{a.imageUrl}}" class="product-thumb" alt="">
+            <button class="card-btn">add to wishlist</button>
+          </div>
+          <div class="product-info">
+            <h1 style="font-size: 15px;" class="product-brand">{{a.name}}</h1>
+            <p class="product-short-description"></p>
+            <span class="price">{{a.price}}</span><span class="actual-price"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js">
+
+    </script>
+  </body>
+
+  <div class="text-center" *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+
+</div>

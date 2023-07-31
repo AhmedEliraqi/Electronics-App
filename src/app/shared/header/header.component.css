@@ -1,0 +1,28 @@
+nav {
+  background: linear-gradient(to right, #73d608, #6e4d06);
+
+  color: #ffffff;
+}
+  .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-image: 'C:/Users/EL-Huda/Desktop/E-Commerce/website/E-commerce/src/assets/posters/bn.jpg';
+  }
+      ul {
+          list-style: none;
+          display: flex;
+          justify-content: space-between;
+          width: 20%;
+          margin: 0;
+      }
+          li {
+              cursor: pointer;
+              font-size: 22px;
+              color: #ffffff;
+              text-decoration: none;
+
+          }
+
+

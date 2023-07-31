@@ -1,0 +1,20 @@
+<img src="assets/posters/zv.jpg" style="width: 100%;height: 500px;margin-top: 10px;" alt="">
+<div  style="margin-top: 20px;margin-bottom: 20px;font-size: 20px;">
+    <label for="category-select">Category: </label>
+    <select style="width: 230px;" id="category-select"(change)="filter($event)" >
+      <option  value="all">All</option>
+      <option *ngFor="let category of categories" [value]="category.id">
+        {{ category.name }}
+      </option>
+    </select>
+  </div>
+    <div class="row" *ngIf="!loading">
+        <div class="col-md-3 col-sm-12" *ngFor="let item of products" >
+           <app-product [data]="item" (item)="addToCart($event)"></app-product>
+        </div>
+    </div>
+    <div class="text-center w-100" *ngIf="loading">
+        <app-spinner></app-spinner>
+    </div>
+
+
